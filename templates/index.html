@@ -5,11 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lenny Menny</title>
     <link rel="stylesheet" href="../static/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../static/js.js"></script>
 
     <!-- Form (overall) things -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Filtering -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
 
   <body>
@@ -30,14 +36,18 @@
             <div style="width:47%;">
                 <p>FAVORITE MENU ITEMS</p>
                 <div>
-                    <input class="form-control" id="myInput" type="text">
+                    <input class="form-control" id="myInput" type="text" placeholder="Search..">
                     <br>
                     <ul class="list-group" id="myList">
-                      <li class="list-group-item">First item</li>
-                      <li class="list-group-item">Second item</li>
-                      <li class="list-group-item">Third item</li>
-                      <li class="list-group-item">Fourth</li>
-                    </ul>  
+                      <li class="list-group-item">Whole Wheat French Toast</li>
+                      <li class="list-group-item">Cheese Pizza</li>
+                      <li class="list-group-item">Coffee Cake</li>
+                      <li class="list-group-item">Nachos</li>
+                      <li class="list-group-item">Poke Bowls</li>
+                      <li class="list-group-item">Mac and Cheese</li>
+                      <li class="list-group-item">Banana Bread</li>
+                      
+                    </ul>   
                 </div>
 
             </div>
@@ -47,7 +57,7 @@
             </div>
 
             <p>
-                <input type="submit" value="continue">CONTINUE</input>
+                <input type="submit" value="CONTINUE"></input>
             </p>
         </form> 
     </div>
