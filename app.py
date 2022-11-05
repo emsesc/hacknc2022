@@ -8,7 +8,7 @@ def home():
 
 @app.route("/form/")
 def form():
-    return "Form Page!"
+    return render_template("index.html")
 
 @app.route("/about/")
 def about():
