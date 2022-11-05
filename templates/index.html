@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lenny Menny</title>
-    <link rel="stylesheet" href="../static/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="../static/js.js"></script>
 
     <!-- Form (overall) things -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -16,6 +14,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/js.js"></script>
   </head>
 
   <body>
@@ -30,41 +31,29 @@
             </div>
             <div style="width:100%;">
                 <p>DIETARY RESTRICTIONS</p>
-                <input name="diet" type="text"/>
+                <input type="checkbox" id="gluten-free" name="gluten-free">
+                <label for="gluten-free">Gluten-free</label>
+                <input type="checkbox" id="vegetarian" name="vegetarian">
+                <label for="vegetarian">Vegetarian</label>
+                <input type="checkbox" id="Vegan" name="vegan">
+                <label for="vegan">Vegan</label>
             </div>
+            <br>
 
             <div style="width:47%;">
                 <p>FAVORITE MENU ITEMS</p>
+                <div class="dropdown">
+                  <input id="listSearch" name="food type="text"/>
+                  <div class="dropdown-content">
+                    <ul class='filterElements' id="myList li">
+                      <li>option 1</li>
+                      <li>option 2</li>
+                      <li>option 3</li>
+                    </ul>
 
-                <!-- <div id=""myDropdown>
-                    <input name="food" class="form-control" id="myInput" type="text" placeholder="Search..">
-                    <br>
-                    <ul class="list-group" id="myList">
-                      <li class="list-group-item">Whole Wheat French Toast</li>
-                      <li class="list-group-item">Cheese Pizza</li>
-                      <li class="list-group-item">Coffee Cake</li>
-                      <li class="list-group-item">Nachos</li>
-                      <li class="list-group-item">Poke Bowls</li>
-                      <li class="list-group-item">Mac and Cheese</li>
-                      <li class="list-group-item">Banana Bread</li>
-                      
-                    </ul>   
-                </div> -->
+                  </div>
+                </div>
 
-                <div class="dropdown" id="myDropdown">
-                    <div id="myList" class="list-content">
-                    <input name ="food" type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()" onmouseover="filterFunction()">
-                    <br>
-                    <ul class="list-group" id="myList">
-                      <li class="list-group-item">Whole Wheat French Toast</li>
-                      <li class="list-group-item">Cheese Pizza</li>
-                      <li class="list-group-item">Coffee Cake</li>
-                      <li class="list-group-item">Nachos</li>
-                      <li class="list-group-item">Poke Bowls</li>
-                      <li class="list-group-item">Mac and Cheese</li>
-                      <li class="list-group-item">Banana Bread</li>
-                    </div>
-                
 
             </div>
             <div style="width:47%;margin-left:6%">
