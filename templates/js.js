@@ -1,4 +1,21 @@
+console.log("hello")
+
+// getElementByClass -> remove hidden
+
+
+function addBadge(event){
+  const input=document.getElementById("results")
+  //eventlistener on click -> hidden/not 
+  console.log(event)
+  console.log(input)
+  input.appendChild(event.target)
+}
+
 $(document).ready(function($){
+
+  $(".menuItem").click(addBadge)
+
+
 
   // filter
   $("#listSearch").on("keyup", function() {
@@ -43,6 +60,4 @@ $(document).ready(function($){
         //-- msg example
         $("body").append(JSON.stringify(user) + "<br>");
     })
-
-    
 })

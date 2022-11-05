@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lenny Menny</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js.js"></script>
     <link rel="stylesheet" href="../static/style.css">
 
     <!-- Form (overall) things -->
@@ -16,8 +17,6 @@
     <script 
     src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-    <script src="../static/js.js"></script>
   </head>
 
   <body>
@@ -43,15 +42,26 @@
           <br />
           <div style="width:45%;" class="dropdown">
               <p>FAVORITE MENU ITEMS</p>
-              <input id="listSearch" name="food type="text"/>
+              <ul id="results">
+              </ul>
+              <input id="listSearch" name="food" type="text"/>
                 <div class="dropdown-content">
                   <ul class='filterElements' id="myList li">
-                    <li>option 1</li>
-                    <li>option 2</li>
-                    <li>option 3</li>
-                  </ul>
+                    <span id="primary-badge" class="badge badge-pill badge-primary menuItem" onclick="addBadge(event)">Banana Bread</span>
+                    <span class="badge badge-pill badge-primary menuItem">Mac & Cheese</span>
+                    <span class="badge badge-pill badge-primary menuItem">French Toast</span>
+                    <span class="badge badge-pill badge-primary menuItem">Chocolate Croissant</span>
+                    <span class="badge badge-pill badge-primary menuItem">Crispy Chicken Nuggets</span>
+                    <span class="badge badge-pill badge-primary menuItem">Cheese Pizza</span>
 
+                    <!-- <li>option 1</li>
+                    <li>option 2</li>
+                    <li>option 3</li> -->
+
+                  </ul>
+            
                 </div>
+              
           </div>
           <br />
           <div style="width:45%; text-align: center; padding-left: 10%;">
