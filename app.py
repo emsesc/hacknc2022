@@ -32,6 +32,9 @@ def confirm():
 def about():
     return "About page!"
 
+@app.route("/unsub/")
+def unsub():
+    return "Unsubscribe Page"
 
 if __name__ == "__main__":
     app.run(debug=True)
