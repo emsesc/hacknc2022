@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lenny Menny</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../static/style.css">
 
     <!-- Form (overall) things -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -15,8 +16,7 @@
     <script 
     src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    
-    <link rel="stylesheet" href="../static/style.css">
+
     <script src="../static/js.js"></script>
   </head>
 
@@ -25,47 +25,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
     <div style="display:flex;width:100%;">
-        <form action="#" method="post">
-            <div style="width:100%;">
-                <p>NAME</p>
-                <input name="name" type="text" autofocus/>
-            </div>
-            <div style="width:100%;">
-                <p>DIETARY RESTRICTIONS</p>
-                <input type="checkbox" id="gluten-free" value="gluten-free" name="diet">
-                <label for="gluten-free">Gluten-free</label>
-                <input type="checkbox" id="vegetarian" value="vegetarian" name="diet">
-                <label for="vegetarian">Vegetarian</label>
-                <input type="checkbox" id="Vegan" value="vegan" name="diet">
-                <label for="Vegan">Vegan</label>
-            </div>
-            <br>
 
-            <div style="width:47%;">
-                <p>FAVORITE MENU ITEMS</p>
-                <div class="dropdown">
-                  <input id="listSearch" name="food" type="text"/>
-                  <div class="dropdown-content">
-                    <ul class='filterElements' id="myList li">
-                      <li>option 1</li>
-                      <li>option 2</li>
-                      <li>option 3</li>
-                    </ul>
+      <form action="#" method="post">
+          <div style="width:100%;">
+              <p>NAME</p>
+              <input name="name" type="text" autofocus/>
+          </div>
+          <div style="width:100%;">
+              <p>DIETARY RESTRICTIONS</p>
+              <input type="checkbox" id="gluten-free" name="diet" value="gluten-free">
+              <label for="gluten-free">Gluten-free</label>
+              <input type="checkbox" id="vegetarian" name="diet" value="vegetarian">
+              <label for="vegetarian">Vegetarian</label>
+              <input type="checkbox" id="vegan" name="diet" value="vegan">
+              <label for="vegan">Vegan</label>
+          </div>
+          <br />
+          <div style="width:45%;" class="dropdown">
+              <p>FAVORITE MENU ITEMS</p>
+              <input id="listSearch" name="food type="text"/>
+                <div class="dropdown-content">
+                  <ul class='filterElements' id="myList li">
+                    <li>option 1</li>
+                    <li>option 2</li>
+                    <li>option 3</li>
+                  </ul>
 
-                  </div>
                 </div>
-
-
-            </div>
-            <div style="width:47%;margin-left:6%">
-                <p>PHONE NUMBER</p>
-                <input name="phone" type="text"/>
-            </div>
-
-            <p>
-                <input type="submit" value="CONTINUE"></input>
-            </p>
-        </form> 
+          </div>
+          <br />
+          <div style="width:45%; text-align: center; padding-left: 10%;">
+              <p>PHONE NUMBER</p>
+              <input name="phone" type="text"/>
+          </div>
+          <p style="width:100%">
+            <input type="submit" value="CONTINUE"></input>
+          </p>
+      </form> 
     </div>
   </body>
 </html>
