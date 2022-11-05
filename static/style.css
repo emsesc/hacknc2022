@@ -21,7 +21,7 @@ input:focus{
      float:left;margin-bottom:30px;
  }
  form > div > p{
-     font-size: 12px;margin-bottom: 3px;
+     font-size: 12px;margin-bottom: 3px; text-align: left;
  }
  form > div > input{
      font-size:12px;letter-spacing:1px;padding:  5px;border: 0;background:  whitesmoke;border-bottom: 1px solid silver;width: 100%;color: gray;
@@ -60,6 +60,16 @@ input:focus{
      letter-spacing:  1px;
      font-style: italic;
  }
+
+#continue{
+    border: none;
+    color: black;
+    background-color: white;
+}
+
+#continue:hover{
+    background-color: silver;
+}
 
 /* filter */
 
