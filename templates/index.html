@@ -35,7 +35,7 @@
 
             <div style="width:47%;">
                 <p>FAVORITE MENU ITEMS</p>
-                <div>
+                <!-- <div id=""myDropdown>
                     <input class="form-control" id="myInput" type="text" placeholder="Search..">
                     <br>
                     <ul class="list-group" id="myList">
@@ -48,7 +48,22 @@
                       <li class="list-group-item">Banana Bread</li>
                       
                     </ul>   
-                </div>
+                </div> -->
+
+                <div class="dropdown" id="myDropdown">
+                    <div id="myList" class="list-content">
+                    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()" onmouseover="myFunction()">
+                    <br>
+                    <ul class="list-group" id="myList">
+                      <li class="list-group-item">Whole Wheat French Toast</li>
+                      <li class="list-group-item">Cheese Pizza</li>
+                      <li class="list-group-item">Coffee Cake</li>
+                      <li class="list-group-item">Nachos</li>
+                      <li class="list-group-item">Poke Bowls</li>
+                      <li class="list-group-item">Mac and Cheese</li>
+                      <li class="list-group-item">Banana Bread</li>
+                    </div>
+                
 
             </div>
             <div style="width:47%;margin-left:6%">
