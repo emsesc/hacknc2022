@@ -1,0 +1,25 @@
+{
+  "name": "hacknc2022",
+  "version": "1.0.0",
+  "description": "Lenny",
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaac-w18/hacknc2022.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isaac-w18/hacknc2022/issues"
+  },
+  "homepage": "https://github.com/isaac-w18/hacknc2022#readme",
+  "dependencies": {
+    "@azure/cosmos": "^3.17.1",
+    "twilio": "^3.83.1"
+  }
+}
