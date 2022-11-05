@@ -4,9 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lenny Menny</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="/js.js"></script>
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/js.js"></script>
+
+    <!-- Form (overall) things -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Filter function -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
   </head>
   <body>
     <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet">
@@ -25,7 +32,17 @@
 
             <div style="width:47%;">
                 <p>FAVORITE MENU ITEMS</p>
-                <input name="items">
+                <div>
+                    <input name="items" class="form-control" id="myInput" type="text" >
+                    <br>
+                    <ul class="list-group" id="myList">
+                      <li class="list-group-item">First item</li>
+                      <li class="list-group-item">Second item</li>
+                      <li class="list-group-item">Third item</li>
+                      <li class="list-group-item">Fourth</li>
+                    </ul>
+                </div>
+
             </div>
             <div style="width:47%;margin-left:6%">
                 <p>PHONE NUMBER</p>
