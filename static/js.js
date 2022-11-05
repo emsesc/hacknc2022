@@ -1,14 +1,35 @@
-$(document).ready(function(){
+$(document).ready(function($){
 
     // filter things
 
-    $("#myInput").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $("#myList li").filter(function() {
-          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-      });
-
+    // $("#myInput").on("keyup", function() {
+    //     var value = $(this).val().toLowerCase();
+    //     $("#myList li").filter(function() {
+    //       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    //     });
+    //   });
+      
+    function filterFunction() {
+    var input, filter, ul, li, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myList");
+    li = div.getElementsByTagName("li");
+    // for (i = 0; i < li.length; i++) {
+    //     txtValue = li[i].textContent || li[i].innerText;
+    //     if (txtValue.toUpperCase().indexOf(filter) > -1) {
+    //     li[i].style.display = "";
+    //     } else {
+    //     li[i].style.display = "none";
+    //     }
+    // }
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myList li").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+    }
 
     //--- CONTINUE ---
     $("form > p > a").click(function(){
