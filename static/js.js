@@ -1,5 +1,15 @@
 $(document).ready(function(){
 
+    // filter things
+
+    $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myList li").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+
+
     //--- CONTINUE ---
     $("form > p > a").click(function(){
         //-- Detect terms and conditions
@@ -36,13 +46,3 @@ $(document).ready(function(){
         $("body").append(JSON.stringify(user) + "<br>");
     })
 })
-
-// filter things
-$(document).ready(function(){
-    $("#myInput").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $("#myList li").filter(function() {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-    });
-});
