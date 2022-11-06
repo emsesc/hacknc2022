@@ -38,20 +38,23 @@ def validate_phone():
     else:
         redirect(url_for("form"))
 
-@app.route("/")
-@app.route("/home/")
-def home():
-    return render_template("homepage.html")
+@app.route('/postmethod', methods = ["POST"])
+def get_food():
+    jsdata = request.form['javascript_data']
+    session["food"] = json.loads(jsdata)
+    print(session["food"])
+    return session["food"]
 
+@app.route("/", methods=["POST","GET"])
+@app.route("/home/", methods=["POST","GET"])
 @app.route("/form/", methods=["POST","GET"])
 def form():
     if request.method == "POST":
         session["name"] = request.form["name"]
         session["diet"] = request.form.getlist("diet")
-        session["food"] = request.form["food"]
         session["phone"] = request.form["phone"]
         validate_phone()
-        #sendToDatabase(convertJSON())
+        sendToDatabase(convertJSON())
         return redirect(url_for("confirm"))
 
     else:
