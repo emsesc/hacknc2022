@@ -729,16 +729,19 @@ body {
   }
 
   #data_ul {
-    margin: 0 auto;
     display: inline-block;
     list-style-type: none;
-    text-align: left;
     color: white;
   }
-footer{
+
+  .data_li {
+    text-align: left;
+  }
+
+footer {
     padding: 15px;
     background-color:#209dd8;
-    color: white;s
+    color: white;
 }
 
 footer > p {
