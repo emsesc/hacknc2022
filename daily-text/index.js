@@ -19,7 +19,7 @@ module.exports = async function (context, myTimer) {
         var fS = ""
         context.log(menu["All Menu Items"])
         for (var x = 0; x < customers[i].favorite.length; x++) {
-            if(menu["All Menu Items"].some(item => item.foodName === customers[i].favorite[x])){
+            if (menu["All Menu Items"].some(item => item === customers[i].favorite[x])) {
 
                 fS += `${customers[i].favorite[x]}\n`
             }
@@ -28,12 +28,12 @@ module.exports = async function (context, myTimer) {
         context.log(fS)
 
         client.messages
-        .create({
-            body: ` \n☀️ Good morning, ${customers[i].name}!\n🚨 Great news! Your favorite foods are in the dining hall:\n${fS}\nText back with "vegetarian", "gluten-free", or "vegan" for a filtered menu.`,
-            from: '+15094368747',
-            to: `+${customers[i].number}`
-        })
-        .then(message => console.log(message.sid));
+            .create({
+                body: ` \n☀️ Good morning, ${customers[i].name}!\n🚨 Great news! Your favorite foods are in the dining hall:\n${fS}\nText back with "vegetarian", "gluten-free", or "vegan" for a filtered menu.`,
+                from: '+15094368747',
+                to: `+${customers[i].number}`
+            })
+            .then(message => console.log(message.sid));
     }
 
     context.log('JavaScript timer trigger function ran!', timeStamp);
@@ -90,189 +90,82 @@ async function retrieveDocuments() {
 }
 
 async function getMenu() {
-        let response = await axios(chaseUrl)
-        const html = response.data;
-        const $ = cheerio.load(html);
+    let response = await axios(chaseUrl);
+    const html = response.data;
+    const $ = cheerio.load(html);
 
-        var vegetarian = [];
-        var vegan = [];
-        var gf = [];
+    // Dinner
+    var menu = $('#menu-tabs > div');
+    console.log(menu.length);
 
-        const waffleList = $('#menu-station-data-539fd53b59e3bb12d203f45a912eeaf2-b4f1ec9f4b5c8207f8fc29522efe783d > ul > li');
-        console.log(waffleList.length);
-        const waffleBar = [];
-        waffleList.each(function () {
-            const foodName = $(this).find('a').text();
+    var dinnerItems = [];
+    var dinnerVegetarian = [];
+    var dinnerVegan = [];
+    var dinnerGf = [];
 
-            // adding to vegetarian if vegetarian
+    let uniqueDinnerItems = [];
+    let uniqueVegetarianItems = [];
+    let uniqueVeganItems = [];
+    let uniqueGfItems = [];
+    menu.each(function () {
+        var child = $('div');
+        console.log(child.length);
+        var menu_station = $('div > ul > li');
+        console.log(menu_station.length);
+        menu_station.each(function () {
+            const item = $(this).find('a').text();
+            if (item.length > 0) {
+                dinnerItems.push(item);
+            }
+
+            // vegetarian
             const indexOfVeg = $(this).html().indexOf("vegetarian");
             const isVeg = indexOfVeg > -1;
-            if(isVeg) {
-                vegetarian.push(foodName);
+            if (isVeg) {
+                dinnerVegetarian.push(item);
             }
+
 
             // adding to vegan if vegan
             const indexOfVegan = $(this).html().indexOf("vegan");
             const isVegan = indexOfVegan > -1;
-            if(isVegan) {
-                vegan.push(foodName);
+            if (isVegan) {
+                dinnerVegan.push(item);
             }
 
             // adding to gf if made_without_gluten
             const indexOfMWG = $(this).html().indexOf("made_without_gluten");
             const isGf = indexOfMWG > -1;
-            if(isGf) {
-                gf.push(foodName);
+            if (isGf) {
+                dinnerGf.push(item);
             }
+        })
+        uniqueDinnerVegetarian = [...new Set(dinnerVegetarian)];
+        uniqueDinnerVegan = [...new Set(dinnerVegan)];
+        uniqueDinnerGf = [...new Set(dinnerGf)];
+        uniqueDinnerItems = [...new Set(dinnerItems)];
+        uniqueDinnerVegetarian.splice(uniqueDinnerVegetarian.indexOf("100% Cranberry Juice"), uniqueDinnerVegetarian.indexOf("Gatorade Orange"));
+        uniqueDinnerVegetarian.splice(uniqueDinnerVegetarian.indexOf("Pancake Syrup "), uniqueDinnerVegetarian.indexOf('Peanut Butter'));
+        uniqueDinnerVegetarian.splice(uniqueDinnerVegetarian.indexOf("Manicotti "));
 
-            waffleBar.push({
-                foodName,
-            });
-        });
-        console.log(waffleBar);
+        uniqueDinnerVegan.splice(uniqueDinnerVegan.indexOf("100% Cranberry Juice"), uniqueDinnerVegan.indexOf("Gatorade Orange"));
+        uniqueDinnerVegan.splice(uniqueDinnerVegan.indexOf("Pancake Syrup "), uniqueDinnerVegan.indexOf('Peanut Butter'));
+        uniqueDinnerVegan.splice(uniqueDinnerVegan.indexOf("Manicotti "));
 
-        const specialtyList = $('#menu-station-data-7eabe3a1649ffa2b3ff8c02ebfd5659f-b4f1ec9f4b5c8207f8fc29522efe783d > ul > li');
-        console.log(specialtyList.length);
-        const spBakery = [];
-        specialtyList.each(function () {
-            const foodName = $(this).find('a').text();
+        uniqueDinnerGf.splice(uniqueDinnerGf.indexOf("100% Cranberry Juice"), uniqueDinnerGf.indexOf("Gatorade Fruit Punch"));
+        uniqueDinnerGf.splice(uniqueDinnerGf.indexOf("Pancake Syrup "), uniqueDinnerGf.indexOf('Peanut Butter'));
+        uniqueDinnerGf.splice(uniqueDinnerGf.indexOf("Manicotti "));
+        uniqueDinnerGf.splice(uniqueDinnerGf.indexOf("Alfredo Sauce"));
 
-            // adding to vegetarian if vegetarian
-            const indexOfVeg = $(this).html().indexOf("vegetarian");
-            const isVeg = indexOfVeg > -1;
-            if(isVeg) {
-                vegetarian.push(foodName);
-            }
+        uniqueDinnerItems.splice(uniqueDinnerItems.indexOf("100% Cranberry Juice"), uniqueDinnerItems.indexOf("Gatorade Orange"));
+        // console.log("Vegetarian: ", uniqueDinnerVegetarian);
+        // console.log("Vegan: ", uniqueDinnerVegan);
+        // console.log("Gluten Free: ", uniqueDinnerGf);
+        // console.log("Dinner Items: ", uniqueDinnerItems);
+    });
 
-            // adding to vegan if vegan
-            const indexOfVegan = $(this).html().indexOf("vegan");
-            const isVegan = indexOfVegan > -1;
-            if(isVegan) {
-                vegan.push(foodName);
-            }
+    const dinner = { 'Vegetarian': uniqueDinnerVegetarian, 'Vegan': uniqueDinnerVegan, 'Gluten Free': uniqueDinnerGf, 'All Menu Items': uniqueDinnerItems };
+    console.log(dinner);
 
-            // adding to gf if made_without_gluten
-            const indexOfMWG = $(this).html().indexOf("made_without_gluten");
-            const isGf = indexOfMWG > -1;
-            if(isGf) {
-                gf.push(foodName);
-            }
-
-            spBakery.push({
-                foodName,
-            });
-        });
-        console.log(spBakery);
-        
-        const bakeryList = $('#menu-station-data-c4ca4238a0b923820dcc509a6f75849b-b4f1ec9f4b5c8207f8fc29522efe783d > ul > li');
-        console.log(bakeryList.length);
-        const bakery = [];
-        bakeryList.each(function () {
-            const foodName = $(this).find('a').text();
-
-            // adding to vegetarian if vegetarian
-            const indexOfVeg = $(this).html().indexOf("vegetarian");
-            const isVeg = indexOfVeg > -1;
-            if(isVeg) {
-                vegetarian.push(foodName);
-            }
-
-            // adding to vegan if vegan
-            const indexOfVegan = $(this).html().indexOf("vegan");
-            const isVegan = indexOfVegan > -1;
-            if(isVegan) {
-                vegan.push(foodName);
-            }
-
-            // adding to gf if made_without_gluten
-            const indexOfMWG = $(this).html().indexOf("made_without_gluten");
-            const isGf = indexOfMWG > -1;
-            if(isGf) {
-                gf.push(foodName);
-            }
-
-            bakery.push({
-                foodName,
-            });
-        });
-        console.log(bakery);
-
-        const kitchenList = $('#menu-station-data-eccbc87e4b5ce2fe28308fd9f2a7baf3-b4f1ec9f4b5c8207f8fc29522efe783d > ul > li');
-        console.log(kitchenList.length);
-        const kitchen = [];
-        kitchenList.each(function () {
-            const foodName = $(this).find('a').text();
-
-            // adding to vegetarian if vegetarian
-            const indexOfVeg = $(this).html().indexOf("vegetarian");
-            const isVeg = indexOfVeg > -1;
-            if(isVeg) {
-                vegetarian.push(foodName);
-            }
-
-            // adding to vegan if vegan
-            const indexOfVegan = $(this).html().indexOf("vegan");
-            const isVegan = indexOfVegan > -1;
-            if(isVegan) {
-                vegan.push(foodName);
-            }
-
-            // adding to gf if made_without_gluten
-            const indexOfMWG = $(this).html().indexOf("made_without_gluten");
-            const isGf = indexOfMWG > -1;
-            if(isGf) {
-                gf.push(foodName);
-            }
-            
-            kitchen.push({
-                foodName,
-            });
-        });
-        console.log(kitchen);
-
-        const saladList = $('#menu-station-data-b53b3a3d6ab90ce0268229151c9bde11-b4f1ec9f4b5c8207f8fc29522efe783d > ul > li');
-        console.log(saladList.length);
-        const saladBar = [];
-        saladList.each(function() {
-            const foodName = $(this).find('a').text();
-
-            // adding to vegetarian if vegetarian
-            const indexOfVeg = $(this).html().indexOf("vegetarian");
-            const isVeg = indexOfVeg > -1;
-            if(isVeg) {
-                vegetarian.push(foodName);
-            }
-            
-            // adding to vegan if vegan
-            const indexOfVegan = $(this).html().indexOf("vegan");
-            const isVegan = indexOfVegan > -1;
-            if(isVegan) {
-                vegan.push(foodName);
-            }
-
-            // adding to gf if made_without_gluten
-            const indexOfMWG = $(this).html().indexOf("made_without_gluten");
-            const isGf = indexOfMWG > -1;
-            if(isGf) {
-                gf.push(foodName);
-            }
-            
-            saladBar.push({
-                foodName,
-            });
-        });
-        console.log(saladBar);
-
-        console.log("Vegetarian: ", vegetarian);
-        console.log("Vegan: ", vegan);
-        console.log("Gluten Free: ", gf);
-
-        const allItems = waffleBar.concat((spBakery.concat(bakery.concat(kitchen.concat(saladBar)))));
-        console.log("All Items: ", allItems);
-        
-        const continentalBreakfast = {'Vegetarian' : vegetarian, 'Vegan' : vegan, "Gluten Free" : gf, "All Menu Items" : allItems};
-        console.log(continentalBreakfast);
-
-        return continentalBreakfast;
-
+    return dinner;
 }
