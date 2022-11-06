@@ -259,10 +259,10 @@ body {
     padding: 15px 0;
   }
   
-  #header.header-scrolled,
+  /* #header.header-scrolled,
   #header.header-inner-pages {
-    background: rgba(40, 58, 90, 0.9);
-  }
+    background: #3873a3;
+  } */
   
   #header .logo {
     font-size: 30px;
@@ -729,16 +729,14 @@ body {
   }
 
   #data_ul {
-    margin: 0 auto;
     display: inline-block;
     list-style-type: none;
     text-align: left;
-    color: white;
   }
 footer{
     padding: 15px;
     background-color:#209dd8;
-    color: white;s
+    color: white;
 }
 
 footer > p {
