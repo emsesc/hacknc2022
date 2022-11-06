@@ -728,12 +728,13 @@ body {
     display: inline-block;
     list-style-type: none;
     text-align: left;
+    color: white;
   }
 
-footer{
+footer {
     padding: 15px;
     background-color:#209dd8;
-    color: white;s
+    color: white;
 }
 
 footer > p {
