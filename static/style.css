@@ -721,3 +721,22 @@ body {
       max-width: 40%;
     }
   }
+
+
+
+
+
+  /* Thank you for submitting page */
+  #submit_head {
+    text-align: center;
+  }
+
+  #details_par {
+    text-align: center;
+    color: white;
+  }
+
+  #data_ul {
+    text-align: center;
+    color: white;
+  }

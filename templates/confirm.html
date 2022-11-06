@@ -5,15 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmation</title>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
-    <h1>Thank you for submitting!</h1>
-    <p>Here are your details:</p>
-    <ul>
-        <li>Name: {{ data[0] }}</li>
-        <li>Dietary Restrictions: {{ data[1] }}</li>
-        <li>Favorites: {{ data[2] }}</li>
-        <li>Phone Number: {{ data[3] }}</li>
-    </ul>
+    <h1 class="logo me-auto"><a href="index.html">lenny.menny</a></h1>
+    <section id="hero" class="d-flex align-items-center">
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+                <h1 id="submit_head">Thank you for submitting!</h1>
+                <p id="details_par">Here are your details:</p>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+              <img src="../static/img/hero-img.png" class="img-fluid animated" alt="">
+            </div>
+            <ul id="data_ul">
+                <li class="data_li">Name: {{ data[0] }}</li>
+                <li class="data_li">Dietary Restrictions: {{ data[1] }}</li>
+                <li class="data_li">Favorites: {{ data[2] }}</li>
+                <li class="data_li">Phone Number: {{ data[3] }}</li>
+            </ul>
+          </div>
+        </div>
+    
+      </section> <!-- End Hero -->
+
+    
+    
+    
 </body>
 </html>
