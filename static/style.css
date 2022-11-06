@@ -725,6 +725,8 @@ body {
   }
 
   #data_ul {
+    padding-left: 34%;
+    padding-right: 30%;
     display: inline-block;
     list-style-type: none;
     text-align: left;
