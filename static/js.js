@@ -16,6 +16,7 @@ function getULItems(){
 
 function addBadge(event){
   const input=document.getElementById("results")
+  document.getElementById("append").value += event.target.innerHTML + ","
   //eventlistener on click -> hidden/not 
   console.log(event)
   console.log(input)

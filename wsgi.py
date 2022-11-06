@@ -13,18 +13,15 @@ def sendToDatabase(json):
     print(x.text)
 
 
-def convertJSON() -> json:
-    if "name" in session:
-        data = {
-            "name" : session["name"],
-            "number" : session["phone"],
-            "dietary" : session["diet"],
-            "favorites" : session["food"]
-        }
-        print(json.dumps(data))
-        return json.dumps(data)
-    else:
-        return redirect(url_for("form"))
+def convertJSON(name, number, dietary, favorites) -> json:
+    data = {
+        "name" : name,
+        "number" : number,
+        "dietary" : dietary,
+        "favorites" : favorites
+    }
+    print(json.dumps(data))
+    return json.dumps(data)
 
 def validate_phone(number) -> str:
     p = re.compile('^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$')
@@ -36,25 +33,20 @@ def validate_phone(number) -> str:
     else:
         return "1" + m.group(2) + m.group(3)+ m.group(4)
 
-@app.route('/postmethod', methods = ["POST"])
-def get_food():
-    jsdata = request.form['javascript_data']
-    session["food"] = json.loads(jsdata)
-    print(session["food"])
-
-    return session["food"]
-
 @app.route("/", methods=["POST","GET"])
 @app.route("/home/", methods=["POST","GET"])
 @app.route("/form/", methods=["POST","GET"])
 def form():
     if request.method == "POST":
-        session["name"] = request.form["name"]
-        session["diet"] = request.form.getlist("diet")
-        session["phone"] = request.form["phone"]
-        session["phone"] = validate_phone(session["phone"])
-        sendToDatabase(convertJSON())
-        return redirect(url_for("confirm"))
+        print(request.form)
+        name = request.form["name"]
+        print(name)
+        diet = request.form.getlist("diet")
+        phone = validate_phone(request.form["phone"])
+        favorites = request.form["favorites"].split(",")[:-1]
+        print(favorites)
+        sendToDatabase(convertJSON(name, phone, diet, favorites))
+        return redirect("/confirm?" + "name=" + name + "&diet=" + json.dumps(diet)+ "&favorites=" + json.dumps(favorites) + "&number=" + phone)
 
     else:
         return render_template("index.html")
@@ -62,7 +54,7 @@ def form():
 @app.route("/confirm/")
 def confirm():
     if "name" in session:
-        data = [session["name"], session["diet"], session["food"], session["phone"]]
+        data = [request.args.get('name'), request.args.get('diet'), request.args.get('favorites'), request.args.get("number")]
         return render_template("confirm.html", data=data)
     else:
         return redirect(url_for("form"))
