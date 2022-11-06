@@ -5,6 +5,11 @@ body{
 input:focus{
      outline: none;
  }
+
+ @font-face {
+    font-family: 'caviarDreams';
+     src: url(../caviar_dreams/CaviarDreams.ttf);
+ }
  
 form{
      width: 35%;
@@ -14,7 +19,6 @@ form{
      background:whitesmoke;
      border-radius:5px;
      position:relative;
-     font-family: 'Libre Franklin', sans-serif;
  }
 
  form > div {
@@ -25,6 +29,10 @@ form{
  }
  form > div > input{
      font-size:12px;letter-spacing:1px;padding:  5px;border: 0;background:  whitesmoke;border-bottom: 1px solid silver;width: 100%;color: gray;
+ }
+
+ form > div > label{
+    display: inline;
  }
 
  form > p:last-of-type{
