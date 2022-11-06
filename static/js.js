@@ -2,6 +2,17 @@ console.log("hello")
 
 // getElementByClass -> remove hidden
 
+function getULItems() {
+  const the_stuff = document.getElementById("results").getElementsByTagName("span");
+  var arr = new Array(the_stuff.length);
+  for (let i = 0; i < the_stuff.length; i++) {
+    arr[i] = the_stuff[i].innerText;
+  }
+  const javascriptdata = JSON.stringify(arr);
+  $.post( "/postmethod", {
+    javascript_data: javascriptdata
+  });
+}
 
 function addBadge(event){
   const input=document.getElementById("results")
