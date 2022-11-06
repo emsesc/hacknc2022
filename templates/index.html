@@ -50,7 +50,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body id="body">
   <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
@@ -162,12 +162,14 @@
           </div>
           <div style="width:100%;">
               <p>DIETARY RESTRICTIONS</p>
-              <input type="checkbox" id="gluten-free" name="diet" value="gluten-free">
-              <label for="gluten-free">Gluten-free</label>
-              <input type="checkbox" id="vegetarian" name="diet" value="vegetarian">
-              <label for="vegetarian">Vegetarian</label>
-              <input type="checkbox" id="vegan" name="diet" value="vegan">
-              <label for="vegan">Vegan</label>
+              <div class="label-checkbox">
+                <input type="checkbox" id="gluten-free" name="diet" value="gluten-free">
+                <label for="gluten-free">Gluten-free</label>
+              </div>
+              <div class="label-checkbox"><input type="checkbox" id="vegetarian" name="diet" value="vegetarian">
+                <label for="vegetarian">Vegetarian</label></div>
+              <div class="label-checkbox"><input type="checkbox" id="vegan" name="diet" value="vegan">
+                <label for="vegan">Vegan</label></div>
           </div>
           <br />
           <div style="width:45%;" class="dropdown">
