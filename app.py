@@ -68,10 +68,6 @@ def confirm():
     else:
         return redirect(url_for("form"))
 
-@app.route("/about/")
-def about():
-    return "About page!"
-
 @app.route("/unsub/")
 def unsub():
     return "Unsubscribe Page"
