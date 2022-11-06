@@ -1,0 +1,21 @@
+{
+  "bindings": [
+    {
+      "name": "myTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 30 7 * * *"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "in",
+      "name": "inputDocument",
+      "databaseName": "data",
+      "collectionName": "customer",
+      "connectionStringSetting": "lennymenny_DOCUMENTDB",
+      "id": "",
+      "partitionKey": "undefined",
+      "sqlQuery": ""
+    }
+  ]
+}
