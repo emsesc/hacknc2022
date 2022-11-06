@@ -19,7 +19,7 @@ module.exports = async function (context, myTimer) {
         var fS = ""
         context.log(menu["All Menu Items"])
         for (var x = 0; x < customers[i].favorite.length; x++) {
-            if (menu["All Menu Items"].some(item => item === customers[i].favorite[x])) {
+            if (menu["All Menu Items"].includes(customers[i].favorite[x])) {
 
                 fS += `${customers[i].favorite[x]}\n`
             }
