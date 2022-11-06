@@ -725,9 +725,11 @@ body {
   }
 
   #data_ul {
-    text-align: center;
-    color: white;
+    display: inline-block;
+    list-style-type: none;
+    text-align: left;
   }
+  
 footer{
     padding: 15px;
     background-color:#209dd8;
