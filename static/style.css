@@ -9,7 +9,6 @@
 }
 
 #body{
-    padding:25px;
     font-family: "Caviar Dreams";
 }
 
@@ -189,7 +188,7 @@ body {
     bottom: 0;
     z-index: 9999;
     overflow: hidden;
-    background: #37517e;
+    background: #224748;
   }
   
   #preloader:before {
@@ -197,7 +196,7 @@ body {
     position: fixed;
     top: calc(50% - 30px);
     left: calc(50% - 30px);
-    border: 6px solid #37517e;
+    border: 6px solid #224748;
     border-top-color: #fff;
     border-bottom-color: #fff;
     border-radius: 50%;
@@ -281,7 +280,6 @@ body {
     line-height: 1;
     font-weight: 500;
     letter-spacing: 2px;
-    text-transform: uppercase;
   }
   
   #header .logo a {
@@ -300,6 +298,7 @@ body {
   */
   .navbar {
     padding: 0;
+    background-color: #6c4744;
   }
   
   .navbar ul {
@@ -487,7 +486,7 @@ body {
   .navbar-mobile a:focus {
     padding: 10px 20px;
     font-size: 15px;
-    color: #37517e;
+    color: #224748;
   }
   
   .navbar-mobile a:hover,
@@ -499,7 +498,7 @@ body {
   .navbar-mobile .getstarted,
   .navbar-mobile .getstarted:focus {
     margin: 15px;
-    color: #37517e;
+    color: #224748;
   }
   
   .navbar-mobile .dropdown ul {
@@ -542,7 +541,7 @@ body {
   #hero {
     width: 100%;
     height: 80vh;
-    background: #37517e;
+    background: white;
     padding-top: 0px;
   }
   
@@ -555,7 +554,7 @@ body {
     font-size: 48px;
     font-weight: 700;
     line-height: 56px;
-    color: #fff;
+    color: #62c6f2;
   }
   
   #hero h2 {
@@ -700,7 +699,7 @@ body {
     margin-bottom: 20px;
     padding-bottom: 20px;
     position: relative;
-    color: #37517e;
+    color: #224748;
   }
   
   .section-title h2::before {
@@ -747,7 +746,7 @@ body {
   .why-us .content h3 {
     font-weight: 400;
     font-size: 34px;
-    color: #37517e;
+    color: #224748;
   }
   
   .why-us .content h4 {
@@ -906,7 +905,7 @@ body {
   --------------------------------------------------------------*/
   #footer {
     font-size: 14px;
-    background: #37517e;
+    background: #224748;
   }
   
   #footer .footer-newsletter {
@@ -923,7 +922,7 @@ body {
     padding: 0;
     line-height: 1;
     font-weight: 600;
-    color: #37517e;
+    color: #224748;
   }
   
   #footer .footer-newsletter form {
@@ -978,7 +977,7 @@ body {
     line-height: 1;
     text-transform: uppercase;
     font-weight: 600;
-    color: #37517e;
+    color: #224748;
   }
   
   #footer .footer-top .footer-contact p {
@@ -992,7 +991,7 @@ body {
   #footer .footer-top h4 {
     font-size: 16px;
     font-weight: bold;
-    color: #37517e;
+    color: #224748;
     position: relative;
     padding-bottom: 12px;
   }
