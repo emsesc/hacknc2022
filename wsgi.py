@@ -33,9 +33,12 @@ def validate_phone(number) -> str:
     else:
         return "1" + m.group(2) + m.group(3)+ m.group(4)
 
-@app.route("/", methods=["POST","GET"])
-@app.route("/home/", methods=["POST","GET"])
-@app.route("/form/", methods=["POST","GET"])
+@app.route("/")
+@app.route("/home/")
+def redir():
+    return redirect(url_for("form"))
+
+@app.route("/form/", methods=("POST","GET"))
 def form():
     if request.method == "POST":
         print(request.form)
@@ -53,12 +56,10 @@ def form():
 
 @app.route("/confirm/")
 def confirm():
-    if "name" in session:
-        data = [request.args.get('name'), request.args.get('diet'), request.args.get('favorites'), request.args.get("number")]
-        return render_template("confirm.html", data=data)
-    else:
-        return redirect(url_for("form"))
+    data = [request.args.get('name'), request.args.get('diet'), request.args.get('favorites'), request.args.get("number")]
+    return render_template("confirm.html", data=data)
+
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
