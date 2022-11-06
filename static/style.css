@@ -70,10 +70,6 @@ label{
     display: inline;
     font-size: 16px;
 }
-/* 
-form > div > div > label{
-    float: left;
-} */
 
 .label-checkbox{
     display: block;
@@ -259,10 +255,10 @@ body {
     padding: 15px 0;
   }
   
-  /* #header.header-scrolled,
+  #header.header-scrolled,
   #header.header-inner-pages {
     background: #3873a3;
-  } */
+  }
   
   #header .logo {
     font-size: 30px;
@@ -729,14 +725,13 @@ body {
   }
 
   #data_ul {
-    display: inline-block;
-    list-style-type: none;
-    text-align: left;
+    text-align: center;
+    color: white;
   }
 footer{
     padding: 15px;
     background-color:#209dd8;
-    color: white;
+    color: white;s
 }
 
 footer > p {
