@@ -2,7 +2,7 @@ console.log("hello")
 
 // getElementByClass -> remove hidden
 
-function getULItems() {
+function getULItems(){
   const the_stuff = document.getElementById("results").getElementsByTagName("span");
   var arr = new Array(the_stuff.length);
   for (let i = 0; i < the_stuff.length; i++) {
@@ -25,9 +25,6 @@ function addBadge(event){
 $(document).ready(function($){
 
   $(".menuItem").click(addBadge)
-
-
-
   // filter
   $("#listSearch").on("keyup", function() {
     var value = $(this).val().toLowerCase();
