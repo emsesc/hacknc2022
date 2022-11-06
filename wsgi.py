@@ -41,6 +41,7 @@ def get_food():
     jsdata = request.form['javascript_data']
     session["food"] = json.loads(jsdata)
     print(session["food"])
+
     return session["food"]
 
 @app.route("/", methods=["POST","GET"])
