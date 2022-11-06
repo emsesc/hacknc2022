@@ -732,7 +732,9 @@ body {
     display: inline-block;
     list-style-type: none;
     text-align: left;
+    color: white;
   }
+  
 footer{
     padding: 15px;
     background-color:#209dd8;
