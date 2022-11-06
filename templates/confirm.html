@@ -8,9 +8,15 @@
     <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
+    <header id="header" class="fixed-top ">
+      <div class="container d-flex align-items-center">
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo me-auto"><img src="../static/img/logo.png" alt="" class="img-fluid"></a> -->
+
+      </div>
+    </header><!-- End Header -->
     <h1 class="logo me-auto"><a href="index.html">lenny.menny</a></h1>
     <section id="hero" class="d-flex align-items-center">
-
         <div class="container">
           <div class="row">
             <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
@@ -21,15 +27,16 @@
               <img src="../static/img/hero-img.png" class="img-fluid animated" alt="">
             </div>
             <ul id="data_ul">
-                <li class="data_li">Name: {{ data[0] }}</li>
-                <li class="data_li">Dietary Restrictions: {{ data[1] }}</li>
-                <li class="data_li">Favorites: {{ data[2] }}</li>
-                <li class="data_li">Phone Number: {{ data[3] }}</li>
+                <li class="data_li"><b>Name:</b> {{ data[0] }}</li>
+                <li class="data_li"><b>Dietary Restrictions:</b> {{ data[1] }}</li>
+                <li class="data_li"><b>Favorites:</b> {{ data[2] }}</li>
+                <li class="data_li"><b>Phone Number:</b> {{ data[3] }}</li>
             </ul>
           </div>
         </div>
-    
       </section> <!-- End Hero -->
+
+
 
     
     

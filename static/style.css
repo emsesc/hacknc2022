@@ -737,6 +737,9 @@ body {
   }
 
   #data_ul {
-    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
+    list-style-type: none;
+    text-align: left;
     color: white;
   }
