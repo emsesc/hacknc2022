@@ -84,10 +84,10 @@
   <main id="main">
     <!-- ======= Form ======= -->
     <div style="display:flex;width:100%;">
-      <form action="#" method="post">
+      <form action="/form" method="post">
           <div style="width:100%;">
               <p>NAME</p>
-              <input name="name" type="text" autofocus/>
+              <input id="name" name="name" type="text" autofocus/>
           </div>
           <div style="width:100%;">
               <p>DIETARY RESTRICTIONS</p>
@@ -103,9 +103,11 @@
           <br />
           <div style="width:45%;" class="dropdown">
               <p>FAVORITE MENU ITEMS</p>
-              <ul id="results">
-              </ul>
-              <input id="listSearch" name="food" type="text"/>
+              <input type="hidden" id="append" name="favorites" value="">
+                <ul id="results">
+                </ul>
+              </input>
+              <input id="listSearch" type="text"/>
                 <div class="dropdown-content">
                   <ul class='filterElements' id="myList li">
                     <span class="badge badge-pill badge-primary menuItem" onclick="addBadge(event)">Banana Bread</span>
@@ -120,10 +122,10 @@
           <br />
           <div style="width:45%; text-align: center; padding-left: 10%;">
               <p>PHONE NUMBER</p>
-              <input name="phone" type="text"/>
+              <input id="phone" name="phone" type="text"/>
           </div>
           <p style="width:100%">
-            <input id="continue" type="submit" value="CONTINUE" onclick="getULItems()"></input>
+            <input id="continue" type="submit" value="CONTINUE"></input>
           </p>
       </form> 
     </div><!-- End Form -->
