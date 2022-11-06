@@ -8,7 +8,6 @@ function getULItems() {
   for (let i = 0; i < the_stuff.length; i++) {
     arr[i] = the_stuff[i].innerText;
   }
-  console.log(javascriptdata)
   const javascriptdata = JSON.stringify(arr);
   $.post( "/postmethod", {
     javascript_data: javascriptdata
