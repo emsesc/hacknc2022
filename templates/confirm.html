@@ -1,45 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirmation</title>
-    <link rel="stylesheet" href="../static/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmation</title>
+  <link rel="stylesheet" href="../static/style.css">
 </head>
-<body>
-    <header id="header" class="fixed-top ">
-      <div class="container d-flex align-items-center">
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html" class="logo me-auto"><img src="../static/img/logo.png" alt="" class="img-fluid"></a> -->
 
-      </div>
-    </header><!-- End Header -->
-    <h1 class="logo me-auto"><a href="../">lenny.menny</a></h1>
-    <section id="hero" class="d-flex align-items-center">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-                <h1 id="submit_head">Thank you for submitting!</h1>
-                <p id="details_par">Here are your details:</p>
-            </div>
-            <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-              <img src="../static/img/hero-img.png" class="img-fluid animated" alt="">
-            </div>
-            <ul id="data_ul">
-                <li class="data_li"><b>Name:</b> {{ data[0] }}</li>
-                <li class="data_li"><b>Dietary Restrictions:</b> {{ data[1] }}</li>
-                <li class="data_li"><b>Favorites:</b> {{ data[2] }}</li>
-                <li class="data_li"><b>Phone Number:</b> {{ data[3] }}</li>
-            </ul>
-          </div>
+<body id="confirm-body" class="confirm-header">
+  <header id="header" class="fixed-top ">
+    <div class="lenny-logo d-flex align-items-center">
+      <!-- <img src="../Lenny_Sig.png" class="logo me-auto"> -->
+      <!-- <h1 class="logo me-auto"><a href="/">lenny.menny</a></h1> -->
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <a href="index.html" class="logo me-auto"><img src="../static/assets/img/Lenny_Sig.png" alt="" class="img-fluid"></a>
+    </div>
+  </header><!-- End Header -->
+
+
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
+          data-aos="fade-up" data-aos-delay="200">
+          <h1 id="submit_head">Thank you for submitting!</h1>
+          <p id="details_par">Here are your details:</p>
         </div>
-      </section> <!-- End Hero -->
-
-
-
-    
-    
-    
+        <ul id="data_ul">
+          <li class="data_li"><b>Name:</b> {{ data[0] }}</li>
+          <li class="data_li"><b>Dietary Restrictions:</b> {{ data[1] }}</li>
+          <li class="data_li"><b>Favorites:</b> {{ data[2] }}</li>
+          <li class="data_li"><b>Phone Number:</b> {{ data[3] }}</li>
+        </ul>
+      </div>
+    </div>
+  </section> <!-- End Hero -->
 </body>
+
 </html>
