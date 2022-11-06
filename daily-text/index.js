@@ -29,7 +29,7 @@ module.exports = async function (context, myTimer) {
 
         client.messages
         .create({
-            body: `\n☀️ Good morning, ${customers[i].name}!\n🚨 Great news! Your favorite foods are in the dining hall:\n${fS}`,
+            body: ` \n☀️ Good morning, ${customers[i].name}!\n🚨 Great news! Your favorite foods are in the dining hall:\n${fS}\nText back with "vegetarian", "gluten-free", or "vegan" for a filtered menu.`,
             from: '+15094368747',
             to: `+${customers[i].number}`
         })
