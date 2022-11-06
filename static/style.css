@@ -1,18 +1,25 @@
-body{
+@font-face {
+    font-family: "Caviar Dreams";
+    src: url(../caviar_dreams/CaviarDreams.ttf);
+}
+
+@font-face {
+    font-family: "Caviar Dreams Bold";
+    src: url(../caviar_dreams/CaviarDreams_Bold.ttf);
+}
+
+#body{
     padding:25px;
+    font-family: "Caviar Dreams";
 }
 
 input:focus{
      outline: none;
  }
 
- @font-face {
-    font-family: 'caviarDreams';
-     src: url(../caviar_dreams/CaviarDreams.ttf);
- }
- 
+
 form{
-     width: 35%;
+     width: 50%;
      margin-left:auto;
      margin-right:auto;
      padding:50px;
@@ -25,14 +32,16 @@ form{
      float:left;margin-bottom:30px;
  }
  form > div > p{
-     font-size: 12px;margin-bottom: 3px; text-align: left;
+     font-size: 20px;margin-bottom: 3px; text-align: left;
+     font-family: "Caviar Dreams Bold";
  }
  form > div > input{
-     font-size:12px;letter-spacing:1px;padding:  5px;border: 0;background:  whitesmoke;border-bottom: 1px solid silver;width: 100%;color: gray;
+     font-size:18px;letter-spacing:1px;padding:  5px;border: 0;background:  whitesmoke;border-bottom: 1px solid silver;width: 100%;color: gray;
  }
 
  form > div > label{
     display: inline;
+    font-size: 18px;
  }
 
  form > p:last-of-type{
@@ -49,6 +58,26 @@ form{
 
 ul {
     padding-left: 0px;
+}
+form > div > div> input{
+    display:block;
+}
+
+div.label-checkbox{
+    display: inline;
+}
+
+label{
+    display: block;
+    float: right;
+}
+/* 
+form > div > div > label{
+    float: left;
+} */
+
+.label-checkbox{
+    display: inline;
 }
 
  .term{
@@ -126,7 +155,7 @@ ul {
 # General
 --------------------------------------------------------------*/
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Caviar Dreams", sans-serif;
     color: #444444;
   }
   
@@ -146,7 +175,7 @@ body {
   h4,
   h5,
   h6 {
-    font-family: "Jost", sans-serif;
+    font-family: "Caviar Dreams", sans-serif;
   }
   
   /*--------------------------------------------------------------
@@ -535,7 +564,7 @@ body {
   }
   
   #hero .btn-get-started {
-    font-family: "Jost", sans-serif;
+    font-family: "Caviar Dreams", sans-serif;
     font-weight: 500;
     font-size: 16px;
     letter-spacing: 1px;
@@ -762,7 +791,7 @@ body {
   }
   
   .about .content .btn-learn-more {
-    font-family: "Poppins", sans-serif;
+    font-family: "Caviar Dreams", sans-serif;
     font-weight: 500;
     font-size: 14px;
     letter-spacing: 1px;
@@ -836,7 +865,7 @@ body {
   .why-us .accordion-list a {
     display: block;
     position: relative;
-    font-family: "Poppins", sans-serif;
+    font-family: "Caviar Dreams", sans-serif;
     font-size: 16px;
     line-height: 24px;
     font-weight: 500;
@@ -920,7 +949,7 @@ body {
     font-weight: 700;
     font-size: 32px;
     color: #37517e;
-    font-family: "Poppins", sans-serif;
+    font-family: "Caviar Dreams", sans-serif;
   }
   
   .skills .content ul {
@@ -955,7 +984,7 @@ body {
     text-transform: uppercase;
     display: block;
     font-weight: 600;
-    font-family: "Poppins", sans-serif;
+    font-family: "Caviar Dreams", sans-serif;
     color: #37517e;
   }
   
@@ -1041,7 +1070,7 @@ body {
   }
   
   .cta .cta-btn {
-    font-family: "Jost", sans-serif;
+    font-family: "Caviar Dreams", sans-serif;
     font-weight: 500;
     font-size: 16px;
     letter-spacing: 1px;
@@ -1092,7 +1121,7 @@ body {
     transition: all 0.3s;
     padding: 8px 20px;
     border-radius: 50px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Caviar Dreams", sans-serif;
   }
   
   .portfolio #portfolio-flters li:hover,
@@ -1355,7 +1384,7 @@ body {
     font-size: 48px;
     color: #37517e;
     font-weight: 400;
-    font-family: "Jost", sans-serif;
+    font-family: "Caviar Dreams", sans-serif;
     margin-bottom: 25px;
   }
   
@@ -1410,7 +1439,7 @@ body {
     transition: none;
     font-size: 16px;
     font-weight: 500;
-    font-family: "Jost", sans-serif;
+    font-family: "Caviar Dreams", sans-serif;
     transition: 0.3s;
     border: 1px solid #47b2e4;
   }
@@ -1480,7 +1509,7 @@ body {
   .faq .faq-list a {
     display: block;
     position: relative;
-    font-family: "Poppins", sans-serif;
+    font-family: "Caviar Dreamss", sans-serif;
     font-size: 16px;
     line-height: 24px;
     font-weight: 500;
@@ -1864,7 +1893,7 @@ body {
     font-size: 14px;
     line-height: 24px;
     margin-bottom: 0;
-    font-family: "Jost", sans-serif;
+    font-family: "Caviar Dreams", sans-serif;
     color: #5e5e5e;
   }
   
